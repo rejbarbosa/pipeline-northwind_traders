@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: northwind_bronze_source
+    description: |
+      This source contains the raw data from the Northwind Traders database.
+      It includes tables for customers, orders, products, and more.
+    database: northwind-traders-467815
+    schema: bronze__rbt_pipeline_bigdata__northwind_traders
+
+    tables:
+      - name: Categories
+      - name: Customers
+      - name: Employees
+      - name: Order_Details
+      - name: Orders
+      - name: Products
+      - name: Shippers
+      - name: Suppliers
+      - name: Territories
+      - name: Region
+      - name: EmployeeTerritories
