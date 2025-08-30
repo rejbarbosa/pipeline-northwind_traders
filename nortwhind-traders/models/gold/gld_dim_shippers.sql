@@ -1,4 +1,4 @@
 SELECT
-	shipper_id AS id_transportadora,
-	company_name AS nome_empresa
+	shipper_id AS Id_Transportadora,
+	company_name AS Transportadora
 FROM {{ ref('srv_dim_shippers') }}

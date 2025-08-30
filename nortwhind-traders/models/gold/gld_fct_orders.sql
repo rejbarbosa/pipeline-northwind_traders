@@ -1,17 +1,17 @@
 SELECT
-    order_id AS id_pedido,
-    product_id AS id_produto,
-    customer_id AS id_cliente,
-    employee_id AS id_funcionario,
-    shipper_id AS id_transportadora,
-    order_date AS data_pedido,
-    required_date AS data_requerida,
-    shipped_date AS data_envio,
-    net_line_total AS valor_liquido,
-    unit_price AS preco_unitario,
-    quantity AS quantidade,
-    discount_rate AS percentual_desconto,
-    discount_amount AS valor_desconto,
-    freight_cost AS custo_frete
+    order_id AS Id_Pedido,
+    product_id AS Id_Produto,
+    customer_id AS Id_Cliente,
+    employee_id AS Id_Funcionario,
+    shipper_id AS Id_Transportadora,
+    order_date AS Data_Pedido,
+    required_date AS Data_Requerida,
+    shipped_date AS Data_Envio,
+    net_line_total AS Valor_Liquido,
+    unit_price AS Preco_Unitario,
+    quantity AS Quantidade,
+    discount_rate AS Percentual_Desconto,
+    discount_amount AS Valor_Desconto,
+    freight_cost AS Custo_Frete
 FROM
     {{ ref('srv_fct_orders') }}

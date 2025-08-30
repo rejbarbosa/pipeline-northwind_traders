@@ -1,4 +1,4 @@
 SELECT
-	employee_id AS id_funcionario,
-	territory_id AS id_territorio
+	employee_id AS Id_Funcionario,
+	territory_id AS Id_Territorio
 FROM {{ ref('srv_dim_employee_territories') }}

@@ -8,18 +8,20 @@ suppliers AS (
     SELECT * FROM {{ ref('srv_dim_suppliers') }}
 )
 SELECT
-    p.product_id AS id_produto,
-    p.product_name AS nome_produto,
-    c.category_name AS nome_categoria,
-    s.company_name AS nome_fornecedor,
-    p.unit_price AS preco_unitario,
-    p.reorder_level AS nivel_reposicao,
-    p.units_on_order AS unidades_pedidas,
-    p.supplier_id AS id_fornecedor,
-    p.category_id AS id_categoria,
-    p.discontinued AS descontinuado,
-    p.units_in_stock AS unidades_estoque,
-    p.quantity_per_unit AS quantidade_por_unidade
+    p.product_id AS Id_Produto,
+    p.product_name AS Produto,
+    c.category_name AS Categoria,
+    s.company_name AS Fornecedor,
+    p.unit_price AS Preco_Unitario,
+    p.reorder_level AS Nivel_Reposicao,
+    p.units_on_order AS Unidades_Pedidas,
+    p.supplier_id AS Id_Fornecedor,
+    p.category_id AS Id_Categoria,
+    p.discontinued AS Descontinuado,
+    p.units_in_stock AS Unidades_Estoque,
+    REGEXP_EXTRACT(p.quantity_per_unit, r'^(\\d+)') AS Quantidade_Por_Unidade,
+    REGEXP_EXTRACT(p.quantity_per_unit, r'(\\d+)') AS Volume_Por_Unidade,
+    REGEXP_EXTRACT(p.quantity_per_unit, r'(g|kg|ml|cc|pieces|box|bottles|jars)') AS Unidade
 FROM
     products p
 LEFT JOIN

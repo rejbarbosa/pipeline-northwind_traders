@@ -1,6 +1,6 @@
 SELECT
-	territory_id AS id_territorio,
-	territory_description AS descricao_territorio,
-	region_id AS id_regiao,
-	region_description AS descricao_regiao
+	territory_id AS Id_Territorio,
+	territory_description AS Territorio,
+	region_id AS Id_Regiao,
+	region_description AS Regiao
 FROM {{ ref('srv_dim_locality') }}
